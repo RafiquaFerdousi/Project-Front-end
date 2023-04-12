@@ -73,13 +73,76 @@ document.addEventListener("keydown", function(event) {
   console.log("Key pressed: " + event.key);
 });
 
+Arrays:
+Arrays are used to store collections of data, such as lists of numbers, strings, or objects.
+
+var numbers = [1, 2, 3, 4, 5];
+var fruits = ["apple", "banana", "orange"];
+var people = [
+  { name: "John", age: 30 },
+  { name: "Jane", age: 25 },
+  { name: "Bob", age: 40 }
+];
+console.log(numbers[2]); // 3
+console.log(fruits.length); // 3
+console.log(people[1].name); // Jane
+
+Objects:
+Objects are used to store collections of related data and functions.
+
+var person = {
+  name: "John",
+  age: 30,
+  address: {
+    street: "123 Main St",
+    city: "New York",
+    state: "NY"
+  },
+  sayHello: function() {
+    console.log("Hello, my name is " + this.name);
+  }
+};
+console.log(person.name); // John
+console.log(person.address.city); // New York
+person.sayHello(); // Hello, my name is John
 
 
+Classes:
+Classes are used to create objects with specific properties and methods.
+
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  sayHello() {
+    console.log("Hello, my name is " + this.name);
+  }
+}
+var john = new Person("John", 30);
+console.log(john.name); // John
+john.sayHello(); // Hello, my name is John
+
+Asynchronous Programming:
+Asynchronous programming allows code to continue running while waiting for long-running tasks, such as network requests or file operations, to complete.
 
 
+console.log("Start");
+setTimeout(function() {
+  console.log("Middle");
+}, 2000);
+console.log("End");
 
+In this example, the "Start" and "End" statements are executed immediately, while the "Middle" statement is executed after a 2-second delay.
 
+DOM Manipulation:
+JavaScript can be used to manipulate the Document Object Model (DOM), which is a representation of a web page in the browser.
 
+document.getElementById("myButton").addEventListener("click", function() {
+  document.getElementById("myDiv").innerHTML = "Button clicked!";
+});
+
+In this example, clicking the button with the ID "myButton" changes the text of the div with the ID "myDiv" to "Button clicked!".
 
 
 
