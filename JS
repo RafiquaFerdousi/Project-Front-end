@@ -34,3 +34,56 @@ function greet(name) {
   console.log("Hello, " + name + "!");
 }
 greet("John"); // Hello, John!
+
+Conditional Statements:
+Conditional statements are used to execute different blocks of code based on certain conditions.
+
+var age = 30;
+if (age < 18) {
+  console.log("You are not old enough to vote.");
+} else if (age >= 18 && age < 25) {
+  console.log("You can vote, but you can't rent a car.");
+} else {
+  console.log("You can vote and rent a car.");
+}
+
+Loops:
+Loops are used to repeat a block of code until a certain condition is met.
+
+var i;
+for (i = 0; i < 5; i++) {
+  console.log(i);
+}
+
+var j = 0;
+while (j < 5) {
+  console.log(j);
+  j++;
+}
+
+
+Events:
+JavaScript can also be used to handle user events, such as clicks, mouse movements, and keyboard inputs.
+
+document.getElementById("myButton").addEventListener("click", function() {
+  alert("Button clicked!");
+});
+
+document.addEventListener("keydown", function(event) {
+  console.log("Key pressed: " + event.key);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
