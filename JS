@@ -144,9 +144,86 @@ document.getElementById("myButton").addEventListener("click", function() {
 
 In this example, clicking the button with the ID "myButton" changes the text of the div with the ID "myDiv" to "Button clicked!".
 
+Promises:
+Promises are used to handle asynchronous operations and provide a way to handle success and error cases.
+
+function fetchData() {
+  return new Promise(function(resolve, reject) {
+    setTimeout(function() {
+      var data = { name: "John", age: 30 };
+      if (data) {
+        resolve(data);
+      } else {
+        reject("Data not found");
+      }
+    }, 2000);
+  });
+}
+
+fetchData().then(function(data) {
+  console.log(data);
+}).catch(function(error) {
+  console.log(error);
+});
+
+
+In this example, the fetchData function returns a promise that resolves with the data object after a 2-second delay. The then method is called with a callback function that is executed when the promise is resolved, and the catch method is called with a callback function that is executed when the promise is rejected.
+
+Modules:
+Modules are used to organize code into reusable and independent units.
+
+// math.js
+export function add(a, b) {
+  return a + b;
+}
+export function subtract(a, b) {
+  return a - b;
+}
+
+// app.js
+import { add, subtract } from './math.js';
+console.log(add(5, 7)); // 12
+console.log(subtract(10, 3)); // 7
 
 
 
+In this example, the math.js module exports two functions add and subtract using the export keyword, and the app.js module imports these functions using the import keyword.
+
+Spread and Rest Operators:
+The spread operator (...) and rest operator (...) are used to manipulate arrays and objects.
+
+// spread operator
+var numbers1 = [1, 2, 3];
+var numbers2 = [4, 5, 6];
+var combinedNumbers = [...numbers1, ...numbers2];
+console.log(combinedNumbers); // [1, 2, 3, 4, 5, 6]
+
+// rest operator
+function sum(...numbers) {
+  return numbers.reduce(function(total, num) {
+    return total + num;
+  }, 0);
+}
+console.log(sum(1, 2, 3)); // 6
+console.log(sum(4, 5, 6, 7)); // 22
+
+
+Template Literals:
+Template literals are used to create strings with placeholders for variables.
+
+var name = "John";
+var age = 30;
+var message = `My name is ${name} and I am ${age} years old.`;
+console.log(message); // My name is John and I am 30 years old.
+
+
+Regular Expressions:
+Regular expressions are used to match and manipulate patterns in strings.
+
+var str = "The quick brown fox jumps over the lazy dog";
+var pattern = /fox/;
+console.log(pattern.test(str)); // true
+console.log(str.replace(/the/gi, "a")); // A quick brown fox jumps over a lazy dog
 
 
 
