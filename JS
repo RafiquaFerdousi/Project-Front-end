@@ -1,8 +1,36 @@
-var a = 2
+Variables and Data Types:
+Variables are used to store data in JavaScript. There are several types of data types in JavaScript, including string, number, boolean, null, undefined, and object.
 
-let b = 1
-
-const pi =3.14
+var a = 2;
+a++
+a+=12
+a-+1
+let b = 1;
+const pi =3.14;
 
 console.log (a);
 console.log ("begin");
+
+var myName = "John";
+var age = 30;
+var isMarried = true;
+var car = null;
+var pet; // undefined
+var person = {
+  name: "John",
+  age: 30,
+  isMarried: true
+};
+
+Functions:
+Functions are reusable blocks of code that perform specific tasks. They can take arguments and return values.
+
+function addNumbers(a, b) {
+  return a + b;
+}
+console.log(addNumbers(5, 7)); // 12
+
+function greet(name) {
+  console.log("Hello, " + name + "!");
+}
+greet("John"); // Hello, John!
