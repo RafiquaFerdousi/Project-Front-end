@@ -226,4 +226,186 @@ console.log(pattern.test(str)); // true
 console.log(str.replace(/the/gi, "a")); // A quick brown fox jumps over a lazy dog
 
 
+Inheritance:
+Inheritance is used to create a new class based on an existing class.
+
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+  speak() {
+    console.log(`${this.name} makes a noise.`);
+  }
+}
+
+class Dog extends Animal {
+  speak() {
+    console.log(`${this.name} barks.`);
+  }
+}
+
+var dog = new Dog("Rufus");
+dog.speak(); // Rufus barks.
+
+
+Prototypes:
+Prototypes are used to add methods and properties to an object.
+
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+Person.prototype.sayHello = function() {
+  console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+};
+
+var john = new Person("John", 30);
+john.sayHello(); // Hello, my name is John and I am 30 years old.
+
+
+Higher-order Functions:
+Higher-order functions are functions that take one or more functions as arguments and/or return a function as their result.
+
+function add(a, b) {
+  return a + b;
+}
+function multiply(a, b) {
+  return a * b;
+}
+function calculate(a, b, operation) {
+  return operation(a, b);
+}
+
+console.log(calculate(5, 3, add)); // 8
+console.log(calculate(5, 3, multiply)); // 15
+
+
+Closures:
+Closures are functions that have access to variables in their outer scope, even after the outer function has returned.
+
+function counter() {
+  var count = 0;
+  return function() {
+    count++;
+    console.log(count);
+  };
+}
+
+var increment = counter();
+increment(); // 1
+increment(); // 2
+increment(); // 3
+
+Async/Await:
+Async/await is a way to write asynchronous code in a synchronous way, making it easier to read and write.
+
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function run() {
+  console.log("Starting...");
+  await delay(2000);
+  console.log("Delay complete.");
+}
+
+run();
+
+Generators:
+Generators are functions that can be paused and resumed, allowing for the creation of iterators.
+
+function* generateSequence() {
+  yield 1;
+  yield 2;
+  yield 3;
+}
+
+var generator = generateSequence();
+
+console.log(generator.next().value); // 1
+console.log(generator.next().value); // 2
+console.log(generator.next().value); // 3
+
+Map/Set:
+Map and Set are data structures that allow for efficient storage and retrieval of key-value pairs and unique values, respectively.
+
+var myMap = new Map();
+myMap.set("key1", "value1");
+myMap.set("key2", "value2");
+
+console.log(myMap.get("key1")); // value1
+
+var mySet = new Set([1, 2, 3, 2]);
+console.log(mySet); // Set { 1, 2, 3 }
+
+Proxy:
+Proxy is a feature that allows for intercepting and customizing operations on objects.
+
+var myObj = { name: "John", age: 30 };
+var myProxy = new Proxy(myObj, {
+  get: function(target, property) {
+    console.log(`Getting ${property}`);
+    return target[property];
+  },
+  set: function(target, property, value) {
+    console.log(`Setting ${property} to ${value}`);
+    target[property] = value;
+  }
+});
+
+console.log(myProxy.name); // Getting name, John
+myProxy.age = 31; // Setting age to 31
+
+Promise.all:
+Promise.all is a method that takes an array of promises and returns a new promise that resolves when all of the input promises have resolved.
+
+var promise1 = Promise.resolve(1);
+var promise2 = Promise.resolve(2);
+var promise3 = new Promise((resolve, reject) => setTimeout(resolve, 1000, 3));
+
+Promise.all([promise1, promise2, promise3])
+  .then(values => console.log(values)) // [1, 2, 3]
+  .catch(error => console.log(error));
+
+Destructuring:
+Destructuring is a way to extract values from arrays and objects and assign them to variables.
+
+// Array destructuring
+var myArray = [1, 2, 3];
+var [a, b, c] = myArray;
+
+console.log(a); // 1
+console.log(b); // 2
+console.log(c); // 3
+
+// Object destructuring
+var myObject = { name: "John", age: 30 };
+var { name, age } = myObject;
+
+console.log(name); // John
+console.log(age); // 30
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
